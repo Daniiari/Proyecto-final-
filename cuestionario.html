@@ -2,9 +2,46 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>Cuestionario Personalizado</title>
 </head>
 <body>  
+	 <header>
+        <h1>Cuestionario Personalizado</h1>
+        <p>Ayúdanos a conocerte mejor para crear tu plan ideal.</p>
+    </header>
+    <section id="cuestionario">
+        <form id="formulario-cuestionario">
+			<label for="nombre">¿Cuál es tu nombre?</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+
+            <label for="objetivo">¿Cuál es tu principal objetivo?</label>
+            <select id="objetivo" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Perder peso">Perder peso</option>
+                <option value="Ganar músculo">Ganar músculo</option>
+                <option value="Mejorar mi bienestar general">Mejorar mi bienestar general</option>
+            </select>
+
+            <label for="estres">En una escala del 1 al 10, ¿cómo calificarías tu nivel de estrés?</label>
+            <input type="number" id="estres" min="1" max="10" required>
+
+            <label for="alimentacion">¿Cómo describirías tu alimentación?</label>
+            <select id="alimentacion" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Saludable">Saludable</option>
+                <option value="Regular">Regular</option>
+                <option value="Poco saludable">Poco saludable</option>
+            </select>
+
+            <div class="form-actions">
+                <button type="submit" class="btn">Guardar</button>
+           
+            </div>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Bienestar Integral Personalizado. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
 </html>
