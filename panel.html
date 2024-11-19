@@ -2,9 +2,85 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>Panel de Usuario</title>
 </head>
 <body>  
+	<header>
+        <h1>Bienvenido a tu Panel de Usuario</h1>
+        <p>Tu progreso hacia el bienestar comienza aquí.</p>
+    </header>
+    <section id="resumen">
+        <h2>Resumen de tu Perfil</h2>
+        <div id="perfil"></div>
+    </section>
+    <section id="plan-semanal">
+        <h2>Plan Semanal de Bienestar</h2>
+        <div id="nutricion">
+            <h3>Nutrición</h3>
+            <p id="nutricion-detalle"></p>
+        </div>
+        <div id="ejercicio">
+            <h3>Ejercicio</h3>
+            <p id="ejercicio-detalle"></p>
+        </div>
+        <div id="salud-mental">
+            <h3>Salud Mental</h3>
+            <p id="salud-mental-detalle"></p>
+        </div>
+        <div id="descanso">
+            <h3>Descanso</h3>
+            <p id="descanso-detalle"></p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Bienestar Integral Personalizado. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const datosUsuario = JSON.parse(localStorage.getItem("datosUsuario"));
+
+        if (datosUsuario) {
+            
+            const nombreUsuario = datosUsuario.nombre || "Usuario";
+            const perfil = `
+                <p><strong>Hola, ${nombreUsuario}!</strong></p>
+                <p><strong>Objetivo:</strong> ${datosUsuario.objetivo}</p>
+                <p><strong>Nivel de estrés:</strong> ${datosUsuario.estres} / 10</p>
+                <p><strong>Alimentación:</strong> ${datosUsuario.alimentacion}</p>
+            `;
+            document.getElementById("perfil").innerHTML = perfil;
+
+            // Personalizar el plan semanal según el objetivo
+            let detalleNutricion, detalleEjercicio, detalleSaludMental, detalleDescanso;
+
+            if (datosUsuario.objetivo === "Perder peso") {
+                detalleNutricion = "Comidas bajas en calorías y ricas en proteínas.";
+                detalleEjercicio = "Rutinas de cardio de alta intensidad 3 veces por semana.";
+                detalleSaludMental = "Prácticas de mindfulness para reducir el estrés.";
+                detalleDescanso = "Crea una rutina de sueño consistente.";
+            } else if (datosUsuario.objetivo === "Ganar músculo") {
+                detalleNutricion = "Dieta alta en proteínas con un ligero superávit calórico.";
+                detalleEjercicio = "Entrenamiento de fuerza 4 veces por semana.";
+                detalleSaludMental = "Meditación guiada para mejorar la concentración.";
+                detalleDescanso = "Incluye siestas para una mejor recuperación.";
+            } else {
+                detalleNutricion = "Dieta equilibrada con enfoque en alimentos integrales.";
+                detalleEjercicio = "Yoga o pilates 2-3 veces por semana.";
+                detalleSaludMental = "Diario de gratitud para mejorar la perspectiva.";
+                detalleDescanso = "Usa técnicas de relajación antes de dormir.";
+            }
+
+            // Mostrar detalles en el plan semanal
+            document.getElementById("nutricion-detalle").innerText = detalleNutricion;
+            document.getElementById("ejercicio-detalle").innerText = detalleEjercicio;
+            document.getElementById("salud-mental-detalle").innerText = detalleSaludMental;
+            document.getElementById("descanso-detalle").innerText = detalleDescanso;
+        } else {
+            // Si no hay datos, redirigir al cuestionario
+            alert("Por favor, completa el cuestionario primero.");
+            window.location.href = "cuestionario.html";
+        }
+    </script>
 
 </body>
 </html>
