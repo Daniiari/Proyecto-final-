@@ -42,6 +42,39 @@
     <footer>
         <p>&copy; 2024 Bienestar Integral Personalizado. Todos los derechos reservados.</p>
     </footer>
+    
+    <script>
+        document.getElementById("formulario-cuestionario").addEventListener("submit", function (event) {
+            event.preventDefault(); // Evita que se recargue la página
+
+            // Obtener valores del formulario
+            const nombre = document.getElementById("nombre").value;
+            const objetivo = document.getElementById("objetivo").value;
+            const estres = document.getElementById("estres").value;
+            const alimentacion = document.getElementById("alimentacion").value;
+
+            // Validar que todos los campos estén llenos
+            if (!nombre ||!objetivo || !estres || !alimentacion) {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+
+            // Crear un objeto con los datos del usuario
+            const datosUsuario = {
+                nombre,
+                objetivo,
+                estres,
+                alimentacion,
+            };
+
+            // Guardar datos en el almacenamiento local
+            localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
+
+            // Confirmar guardado y redirigir al panel de usuario
+            alert("¡Datos guardados correctamente! Ahora serás redirigido al panel de usuario.");
+            window.location.href = "panel.html";
+        });
+    </script>
 
 </body>
 </html>
