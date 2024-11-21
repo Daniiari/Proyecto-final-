@@ -209,3 +209,39 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+/* Agregamos estilo a las reseñas */
+#testimonios {
+    background-color: #f1f1f1;
+    padding: 2.5rem; /* 40px */
+    text-align: center;
+    display: grid;
+    gap: 1.25rem; /* 20px */
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* 240px */
+}
+
+.testimonial {
+    font-style: italic;
+    margin-bottom: 1.25rem; /* 20px */
+    color: #555;
+}
+
+/* En pantallas más pequeñas, aseguramos que los testimonios estén en una sola columna */
+@media (max-width: 600px) {
+    #testimonios {
+        grid-template-columns: 1fr;
+    }
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.625rem 0; /* 10px 0 */
+    margin-top: 1.25rem; /* 20px */
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 1rem 0; /* Aumentamos el padding para mejor espaciado */
+    }
+}
+
