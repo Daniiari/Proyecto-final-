@@ -66,3 +66,33 @@ h2 {
     margin-bottom: 20px;
     color: #4caf50;
 }
+/* Página principal */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature i {
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.feature p {
+    color: #666;
+}
