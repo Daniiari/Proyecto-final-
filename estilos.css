@@ -66,6 +66,7 @@ h2 {
     margin-bottom: 20px;
     color: #4caf50;
 }
+
 /* Página principal */
 .features {
     display: grid;
@@ -96,6 +97,7 @@ h2 {
 .feature p {
     color: #666;
 }
+
 /* Cuestionario */
 form {
     display: flex;
@@ -122,6 +124,7 @@ input:focus, select:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
+
 /* Panel de Usuario */
 .dashboard {
     display: grid;
@@ -147,6 +150,7 @@ input:focus, select:focus {
 .card p {
     color: #666;
 }
+
 /* Pie de página */
 footer {
     background-color: #333;
@@ -155,6 +159,7 @@ footer {
     padding: 10px 0;
     margin-top: 20px;
 }
+
 /* Botones */
 .btn {
     display: inline-block;
@@ -174,6 +179,7 @@ footer {
 .btn:hover {
     background-color: #45a049;
 }
+
 /* Adaptabilidad: Smartphones */
 @media (max-width: 600px) {
     body {
@@ -186,5 +192,20 @@ footer {
 
     .features {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Adaptabilidad: Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        background-color: #fce4ec;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
