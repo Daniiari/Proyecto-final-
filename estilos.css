@@ -253,4 +253,69 @@ footer {
         padding: 1rem 0; /* Aumentamos el padding para mejor espaciado */
     }
 }
+/* Recursos Educativos */
+#recursos {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#recursos h2 {
+    color: #4caf50;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.recurso, .video, .descarga {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recurso h3, .descarga p {
+    color: #333;
+    font-size: 1.2em;
+}
+
+.recurso p, .video p {
+    color: #666;
+    font-size: 1em;
+}
+
+.recurso a, .descarga a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.recurso a:hover, .descarga a:hover {
+    text-decoration: underline;
+}
+
+.img-articulo {
+    width: 70%; 
+    max-width: 600px;
+    height: auto; 
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 600px) {
+    .img-articulo {
+        width: 90%; /* Aumenta el ancho de la imagen para que sea más visible */
+        margin: 10px auto; /* Reduce el margen */
+    }
+    .articulo {
+        font-size: 0.9em; /* Ajusta el tamaño del texto */
+        padding: 10px; /* Reduce el padding general */
+    }
+}
 
